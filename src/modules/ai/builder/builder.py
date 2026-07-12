@@ -1,36 +1,49 @@
-"""
-Builder AI integration
-Menezes Developer Console
-"""
+#!/usr/bin/env python3
 
 from pathlib import Path
+import subprocess
+import sys
 
 
-def run():
+def git(cmd):
+    return subprocess.check_output(
+        ["git"] + cmd,
+        text=True
+    ).strip()
 
-    root = Path.cwd()
+
+def detect_repo():
+    return Path(git(["rev-parse", "--show-toplevel"]))
+
+
+def detect_branch():
+    return git(["branch", "--show-current"])
+
+
+def main():
+
+    task = sys.argv[1] if len(sys.argv) > 1 else "none"
+
+    repo = detect_repo()
 
     print("=" * 60)
-    print("MDC AI Builder")
+    print("MENEZES DEVELOPER CONSOLE")
     print("=" * 60)
     print()
 
-    print("Current project:")
-    print(root)
-    print()
-
-    if (root / ".git").exists():
-        print("Git repository : OK")
-    else:
-        print("ERROR: not inside a git repository")
-        return
-
-    if (root / "index.html").exists():
-        print("Website project : YES")
-    else:
-        print("Website project : NO")
+    print(f"Project : {repo.name}")
+    print(f"Path    : {repo}")
+    print(f"Branch  : {detect_branch()}")
+    print(f"Task    : {task}")
 
     print()
-    print("Ready.")
+
+    if repo.name != "menezes-pro":
+        print("WARNING: not inside menezes-pro")
+
+    print()
+    print("READY")
+
+
 if __name__ == "__main__":
-    run()
+    main()
