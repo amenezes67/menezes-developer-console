@@ -48,3 +48,17 @@ desktop.ini
 # macOS
 .DS_Store
 
+# Python cache
+.pytest_cache/
+.mypy_cache/
+
+# Coverage
+.coverage
+htmlcov/
+
+# IDE
+.idea/
+
+# Local configuration
+.env
+
