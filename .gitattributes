@@ -1,0 +1,17 @@
+# Normalize text files
+* text=auto
+
+# Python
+*.py text eol=lf
+
+# JSON
+*.json text eol=lf
+
+# Markdown
+*.md text eol=lf
+
+# Batch
+*.bat text eol=crlf
+
+# Windows CMD
+*.cmd text eol=crlf

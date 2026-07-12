@@ -1,0 +1,16 @@
+{
+    "projects": [
+        {
+            "name": "menezes-pro",
+            "repository_path": "X:\\amenezes67\\menezes-pro",
+            "default_branch": "develop",
+            "production_branch": "main",
+            "remote": "origin",
+            "github_url": "https://github.com/amenezes67/menezes-pro",
+            "cloudflare_url": "https://dash.cloudflare.com/",
+            "preview_url": "",
+            "site_url": "https://menezes.pro"
+        }
+    ],
+    "default_project": "menezes-pro"
+}
