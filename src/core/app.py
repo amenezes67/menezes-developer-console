@@ -1,25 +1,24 @@
 ﻿from datetime import datetime
 
+from src.core.banner import print_banner
 from src.core.menu import show_main_menu
-from src.core.version import APP_BUILD, APP_NAME, APP_STAGE, APP_VERSION
+from src.core.version import APP_BUILD, APP_STAGE, APP_VERSION
 
 
 def print_header() -> None:
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
 
-    print()
-    print("=" * 60)
-    print(f"{APP_NAME:^60}")
-    print("=" * 60)
+    print_banner()
     print(f"Version : {APP_VERSION}")
     print(f"Build   : {APP_BUILD}")
     print(f"Stage   : {APP_STAGE}")
     print(f"Local   : {now}")
-    print("=" * 60)
+    print("=" * 62)
 
 
 def main() -> None:
     while True:
+        print()
         print_header()
         option = show_main_menu()
 
