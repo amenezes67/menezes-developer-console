@@ -3,6 +3,7 @@
 from src.core.banner import print_banner
 from src.core.menu import show_main_menu
 from src.core.version import APP_BUILD, APP_STAGE, APP_VERSION
+from src.modules.vscode import open_web_project
 
 
 def print_header() -> None:
@@ -22,9 +23,16 @@ def main() -> None:
         print_header()
         option = show_main_menu()
 
+        if option == "":
+            continue
+
         if option == "0":
             print("\nHasta luego.")
             break
 
-        print(f"\nOpción seleccionada: {option}")
+        if option == "1":
+            open_web_project()
+            continue
+
+        print(f"\nOpción {option} todavía no implementada.")
         input("\nPresione ENTER para continuar...")

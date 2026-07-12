@@ -8,4 +8,11 @@
     print()
     print("0 - Salir")
 
-    return input("\nSeleccione una opción: ").strip()
+    option = input("\nSeleccione una opción: ").strip()
+
+    if option not in {"0", "1", "2", "3", "4", "5"}:
+        print("\nOpción inválida.")
+        input("\nPresione ENTER para continuar...")
+        return ""
+
+    return option
